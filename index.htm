@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoTruck Logistics - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="./Logo.png" alt="GoTruck Logo" class="logo">
+      <span class="brand">GoTruck Logistics</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./about.html">About Us</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./pricing.html">Pricing</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Fast, Reliable, and Always On the Move!</h1>
+    <button id="bookBtn">Book a Truck</button>
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <h2>Our Fleet</h2>
+    <div class="carousel">
+      <div class="slides">
+        <img src="img1.jpg" alt="Truck 1">
+        <img src="img2.jpg" alt="Truck 2">
+        <img src="img3.png" alt="Truck 3">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <h2>Completed Deliveries</h2>
+    <p>We have made <span id="deliveryCount">0</span> deliveries so far!</p>
+    <button id="countBtn">Add Delivery</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GoTruck Logistics. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

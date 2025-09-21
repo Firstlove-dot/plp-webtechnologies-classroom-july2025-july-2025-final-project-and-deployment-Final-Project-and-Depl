@@ -1,0 +1,338 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #004e92, #1abc9c);
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffdd57;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #004e92;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* === Hero Section === */
+.hero {
+  position: relative;
+  height: 400px;
+  background: url("img1.jpg") center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 78, 146, 0.55);
+  z-index: 0;
+}
+
+.hero h1,
+.hero button {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.hero button {
+  margin-top: 20px;
+  background: linear-gradient(45deg, #1abc9c, #3498db);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s, background 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.hero button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #16a085, #2980b9);
+}
+
+/* === Carousel === */
+.carousel-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* === Sections === */
+section {
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.about {
+  background: #f0f9ff; /* light blue */
+}
+
+.services {
+  background: #f9fdf0; /* light green */
+}
+
+.pricing {
+  background: #fff9f0; /* light orange */
+}
+
+.stats {
+  background: #f9f0ff; /* light purple */
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.services ul {
+  list-style: disc;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.services li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+/* === Pricing Table === */
+.pricing table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pricing th,
+.pricing td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.pricing th {
+  background: #3498db;
+  color: white;
+}
+
+/* === Stats (Delivery Counter) === */
+.stats button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(45deg, #1abc9c, #3498db);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.stats button:hover {
+  background: linear-gradient(45deg, #16a085, #2980b9);
+  transform: scale(1.05);
+}
+
+#deliveryCount {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+/* === Contact Form === */
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact button {
+  background: linear-gradient(45deg, #1abc9c, #3498db);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: linear-gradient(45deg, #16a085, #2980b9);
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(135deg, #2c3e50, #004e92);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* === Keyframes === */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
